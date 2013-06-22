@@ -8,18 +8,23 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
-
-@end
-
 @implementation ViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [Product MR_importFromArray:@[@{@"title": @"Apple"}, @{@"title": @"Samsung"}]];
 }
 
+/*
+- (void)persistNewPersonWithTitle:(NSString *)title{
+    NSManagedObjectContext *localContext = [NSManagedObjectContext MR_contextForCurrentThread];
+    Podcasts *podcasts = [Podcasts MR_createInContext:localContext];
+    podcasts.title = title;
+    [localContext MR_saveToPersistentStoreAndWait];
+}
+*/ 
+    
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
